@@ -1,0 +1,29 @@
+<% include header%>
+  
+  <div class="container">
+      <div class="row">
+          <h1 style="text-align: center">NEW POST</h1>
+          <div style="width:50%; margin: 20px,auto;">
+             <form action="/blogs" method="POST">
+                <label>ENTER YOUR TITLE</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="blog[title]" placeholder="title">   
+                </div>
+                <label>ENTER IMAGE URL</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="blog[image]" placeholder="enter image">   
+                 </div>
+                 <div><label>ENTER YOUR BLOG</label></div>
+                 <textarea rows="15" cols="80" name="blog[body]"></textarea>
+               
+                 <br>
+                 <div>
+                     <button class = "btn btn-lg btn-primary">New Post</button> 
+                 </div>
+             </form>
+        </div>
+      </div>
+  </div>
+
+
+<% include footer%>

@@ -1,0 +1,22 @@
+<% include header%>
+
+ <div class="container">
+     <div style="margin-left:400px;margin-right:350px;border:2px solid #E8E8E8;padding:50px">
+       <h1><%= blog.title.toUpperCase() %></h1>
+       <img style="width:300px;height: 300px" src="<%= blog.image %>">
+       <div><b>created on:-</b><%= blog.created.toDateString() %></div><br>
+       <p><b>Your blog goes here</b><br>
+       <%= blog.body %></p>
+       
+       
+         <form action="/blogs/<%= blog._id%>?_method=DELETE" method="POST">
+           <button class = "btn btn-lg btn-danger" >DELETE ME!</button>
+         </form>
+
+         <form action="/blogs/<%= blog._id%>/edit" method="GET">
+          <button class = "btn btn-lg btn-primary" >UPDATE ME!</button>
+         </form>
+      
+      </div>        
+ </div>
+<% include footer%>

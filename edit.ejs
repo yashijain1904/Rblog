@@ -1,0 +1,29 @@
+<% include header%>
+  
+  <div class="container">
+      <div class="row">
+          <h1 style="text-align: center">EDIT -"<%= blog.title.toUpperCase()%>"</h1>
+          <div style="width:50%; margin: 20px,auto;">
+             <form action="/blogs/<%= blog._id%>?_method=PUT" method="POST">
+                <label>EDIT TITLE</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="blog[title]" value="<%=blog.title%>">   
+                </div>
+                <label>EDIT IMAGE URL</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="blog[image]" value="<%= blog.image%>">   
+                 </div>
+                 <div><label>EDIT YOUR BLOG</label></div>
+                 <textarea rows="15" cols="80" name="blog[body]"><%= blog.body%></textarea>
+               
+                 <br>
+                 <div>
+                     <button class = "btn btn-lg btn-primary">Edit Post</button> 
+                 </div>
+             </form>
+        </div>
+      </div>
+  </div>
+
+
+<% include footer%>

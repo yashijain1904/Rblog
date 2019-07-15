@@ -1,0 +1,28 @@
+<% include header%>
+<link href="app.css" rel="stylesheet">
+   <div class="container">
+    <header class="jumbotron">
+        <div class="container">
+                <h1>Welcome To RBlog!</h1>
+                <p>Your Words,Our Platform</p>
+        </div>    
+    </header>
+   </div>
+  <div class="container">
+     <div class="row">
+        <div class="t02">
+           <% blogs.forEach(function(blog){ %>
+              <div class="thumbnail col-lg-4 col-md-6 col-sm-12 col-xs-12 t01">
+                  <h2 class="h01"><%= blog.title.toUpperCase() %></h2>
+                  <img src="<%= blog.image %>"><br>
+                  <div><b>created on:-</b><%= blog.created.toDateString() %></div>
+                  <p><%= blog.body.substring(0,100) %>.....</p>
+                  <a class = "btn btn-xs btn-primary" href="/blogs/<%= blog._id%>">read more</a>
+              </div>
+            <% }) %>
+        </div>
+    </div>
+ </div>
+   
+
+<% include footer%>
